@@ -1,8 +1,8 @@
 {
     "v": "1.0.1",
     "progs": {
-        "test_script": {
-            "desc": "Test scripts",
+        "player_locator": {
+            "desc": "Script for locating players, requires Advanced peripherals and player detector",
             "url": "https://gist.github.com/SorcerioTheWizard/6e363dd7186148677fcfd17d169e631b/raw"
         }
     }
