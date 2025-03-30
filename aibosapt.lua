@@ -1,7 +1,7 @@
 local appname = "aibosapt"
 local act_install = "install"
 local act_update = "update"s
-local applist = "https://raw.githubusercontent.com/SorcerioTheWizard/ComputerCraft-Scripts/master/sgetRegistry.json"
+local applist = "https://raw.githubusercontent.com/aibothedog/aibos-apt/refs/heads/main/AibosAPT.json"
 local list = nil
 function fetchRegistry()
     if list then
