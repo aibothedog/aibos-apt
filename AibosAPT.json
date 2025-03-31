@@ -1,9 +1,9 @@
 {
     "v": "1.0.1",
     "progs": {
-        "player_locator": {
+        "all_players_locator": {
             "desc": "Script for locating players, requires Advanced peripherals and player detector",
-            "url": "https://gist.github.com/SorcerioTheWizard/6e363dd7186148677fcfd17d169e631b/raw"
+            "url": "https://raw.githubusercontent.com/aibothedog/aibos-apt/refs/heads/main/AibosAPT_storage/all_players_locator.lua"
         }
     }
 }
