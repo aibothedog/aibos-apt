@@ -73,7 +73,7 @@ function updateScript(scriptName)
         return
     end
     if not fs.exists(scriptName) then
-        print(scriptName .. "is not installed.")
+        print(scriptName .. " is not installed.")
         print("Would you like to install it? Yes/No")
         local input = read()
         if (string.lower(input) == "y") or (string.lower(input) == "yes") then
