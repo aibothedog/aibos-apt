@@ -1,6 +1,7 @@
 local appname = "aibosapt"
 local act_install = "install"
 local act_update = "update"
+local act_list = "list"
 local applist = "https://github.com/aibothedog/aibos-apt/raw/refs/heads/main/AibosAPT.json"
 local list = nil
 function fetchAibosAPT()
@@ -47,7 +48,7 @@ end
 function installScript(scriptName)
     if not isScriptInAibosAPT(scriptName) then
         print("Script not found in the Aibo's APT: " .. scriptName)
-        print("Try running '" .. appname .. " " .. list .. "' to see all available scripts and their function")
+        print("Try running '" .. appname .. " " .. act_list .. "' to see all available scripts and their function")
         return
     end
     local scriptUrl = list["progs"][scriptName]["url"]
@@ -68,7 +69,7 @@ end
 function updateScript(scriptName)
     if not isScriptInAibosAPT(scriptName) then
         print("Script not found in the Aibo's APT: " .. scriptName)
-        print("Try running '" .. appname .. " " .. list .. "' to see all available scripts and their function")
+        print("Try running '" .. appname .. " " .. act_list .. "' to see all available scripts and their function")
         return
     end
     if not fs.exists(scriptName) then
@@ -89,8 +90,7 @@ function handleCli(action, ...)
         print("Actions:")
         print("  " .. act_install .. " <scriptName> - Install a script")
         print("  " .. act_update .. " <scriptName> - Update a script")
-        -- print("  " .. ACTION_UPGRADE .. " - Upgrade SGet to the latest version")
-        print("  " .. list .. " - List all available scripts")
+        print("  " .. act_list .. " - List all available scripts")
         return
     end
     action = string.lower(action)
@@ -106,7 +106,7 @@ function handleCli(action, ...)
         elseif action == act_update then
             updateScript(scriptName)
         end
-    elseif action == ACTION_LIST then
+    elseif action == act_list then
         tabulateAibosAPT()
     else
         print("Invalid action:", action)
