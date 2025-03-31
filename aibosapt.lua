@@ -25,7 +25,7 @@ function fetchAibosAPT()
     if not list then
         error("Failed to parse the Aibo's APT")
     else
-        print("Fetched the Aibo's APT")
+        print("Fetched Aibo's APT")
     end
 end
 function tabulateAibosAPT()
