@@ -47,7 +47,7 @@ end
 function installScript(scriptName)
     if not isScriptInAibosAPT(scriptName) then
         print("Script not found in the Aibo's APT: " .. scriptName)
-        print("Try running '" .. appname .. " " .. ACTION_LIST .. "' to see all available scripts and their function")
+        print("Try running '" .. appname .. " " .. list .. "' to see all available scripts and their function")
         return
     end
     local scriptUrl = list["progs"][scriptName]["url"]
@@ -68,7 +68,7 @@ end
 function updateScript(scriptName)
     if not isScriptInAibosAPT(scriptName) then
         print("Script not found in the Aibo's APT: " .. scriptName)
-        print("Try running '" .. appname .. " " .. ACTION_LIST .. "' to see all available scripts and their function")
+        print("Try running '" .. appname .. " " .. list .. "' to see all available scripts and their function")
         return
     end
     if not fs.exists(scriptName) then
@@ -90,7 +90,7 @@ function handleCli(action, ...)
         print("  " .. act_install .. " <scriptName> - Install a script")
         print("  " .. act_update .. " <scriptName> - Update a script")
         -- print("  " .. ACTION_UPGRADE .. " - Upgrade SGet to the latest version")
-        print("  " .. ACTION_LIST .. " - List all available scripts")
+        print("  " .. list .. " - List all available scripts")
         return
     end
     action = string.lower(action)
