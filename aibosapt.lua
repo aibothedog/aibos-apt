@@ -9,7 +9,7 @@ function fetchAibosAPT()
         return
     end
     if not http.checkURL(applist) then
-        error("Could not connect to the script registry\nThe URL may not be whitelisted on this Minecraft server: " .. applist)
+        error("Could not connect to Aibo's APT\nThe URL may not be whitelisted on this Minecraft server: " .. applist)
         return
     end
     local resp = http.get(applist)
@@ -17,13 +17,13 @@ function fetchAibosAPT()
         error("Failed to fetch Aibo's APT")
         return
     elseif resp.getResponseCode() ~= 200 then
-        error("Failed to fetch the script registry Response code: " .. resp.getResponseCode())
+        error("Failed to fetch Aibo's APT Response code: " .. resp.getResponseCode())
         return
     end
     list = textutils.unserializeJSON(resp.readAll())
     resp.close()
     if not list then
-        error("Failed to parse the Aibo's APT")
+        error("Failed to parse Aibo's APT")
     else
         print("Fetched Aibo's APT")
     end
@@ -47,7 +47,7 @@ function isScriptInAibosAPT(scriptName)
 end
 function installScript(scriptName)
     if not isScriptInAibosAPT(scriptName) then
-        print("Script not found in the Aibo's APT: " .. scriptName)
+        print("Script not found in Aibo's APT: " .. scriptName)
         print("Try running '" .. appname .. " " .. act_list .. "' to see all available scripts and their function")
         return
     end
@@ -68,7 +68,7 @@ function installScript(scriptName)
 end
 function updateScript(scriptName)
     if not isScriptInAibosAPT(scriptName) then
-        print("Script not found in the Aibo's APT: " .. scriptName)
+        print("Script not found in Aibo's APT: " .. scriptName)
         print("Try running '" .. appname .. " " .. act_list .. "' to see all available scripts and their function")
         return
     end
