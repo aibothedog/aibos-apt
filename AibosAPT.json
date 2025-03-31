@@ -12,6 +12,10 @@
         "bomboclad_client": {
             "desc": "Client script for explosions, requires modem",
             "url": "https://github.com/aibothedog/aibos-apt/raw/refs/heads/main/AibosAPT_storage/bomboclad_client.lua"
+        },
+        "test_app": {
+            "desc": "Test application",
+            "url": "https://github.com/aibothedog/aibos-apt/raw/refs/heads/main/AibosAPT_storage/hello_world.lua"
         }
     }
 }
