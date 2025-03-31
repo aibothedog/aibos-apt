@@ -1,7 +1,7 @@
 local appname = "aibosapt"
 local act_install = "install"
 local act_update = "update"s
-local applist = "https://raw.githubusercontent.com/aibothedog/aibos-apt/refs/heads/main/AibosAPT.json"
+local applist = "https://github.com/aibothedog/aibos-apt/raw/refs/heads/main/AibosAPT.json"
 local list = nil
 function fetchAibosAPT()
     if list then

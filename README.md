@@ -1,7 +1,7 @@
 # Aibo's APT
 ### Installation
 ```bash
-wget https://raw.githubusercontent.com/aibothedog/aibos-apt/refs/heads/master/aibosapt.lua aibosapt
+wget https://github.com/aibothedog/aibos-apt/raw/refs/heads/main/aibosapt.lua aibosapt
 ```
 ### Usage
 <p>aibosapt install <ScriptName> - Install script by name</p>
