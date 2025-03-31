@@ -4,6 +4,14 @@
         "all_players_locator": {
             "desc": "Script for locating players, requires Advanced peripherals and player detector",
             "url": "https://github.com/aibothedog/aibos-apt/raw/refs/heads/main/AibosAPT_storage/all_players_locator.lua"
+        },
+        "bomboclad_server": {
+            "desc": "Script for locating players, requires Advanced peripherals and player detector",
+            "url": "https://github.com/aibothedog/aibos-apt/raw/refs/heads/main/AibosAPT_storage/bomboclad_server.lua"
+        },
+        "bomboclad_client": {
+            "desc": "Script for locating players, requires Advanced peripherals and player detector",
+            "url": "https://github.com/aibothedog/aibos-apt/raw/refs/heads/main/AibosAPT_storage/bomboclad_client.lua"
         }
     }
 }
