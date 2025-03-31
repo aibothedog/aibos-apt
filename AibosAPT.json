@@ -3,7 +3,7 @@
     "progs": {
         "all_players_locator": {
             "desc": "Script for locating players, requires Advanced peripherals and player detector",
-            "url": "https://raw.githubusercontent.com/aibothedog/aibos-apt/refs/heads/main/AibosAPT_storage/all_players_locator.lua"
+            "url": "https://github.com/aibothedog/aibos-apt/raw/refs/heads/main/AibosAPT_storage/all_players_locator.lua"
         }
     }
 }
