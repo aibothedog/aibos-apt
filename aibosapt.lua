@@ -3,32 +3,32 @@ local act_install = "install"
 local act_update = "update"s
 local applist = "https://raw.githubusercontent.com/aibothedog/aibos-apt/refs/heads/main/AibosAPT.json"
 local list = nil
-function fetchRegistry()
+function fetchAibosAPT()
     if list then
         return
     end
     if not http.checkURL(applist) then
-        error("Could not connect to the script registry.\nThe URL may not be whitelisted on this Minecraft server: " .. applist)
+        error("Could not connect to the script registry\nThe URL may not be whitelisted on this Minecraft server: " .. applist)
         return
     end
     local resp = http.get(applist)
     if not resp then
-        error("Failed to fetch the script registry.")
+        error("Failed to fetch Aibo's APT")
         return
     elseif resp.getResponseCode() ~= 200 then
-        error("Failed to fetch the script registry. Response code: " .. resp.getResponseCode())
+        error("Failed to fetch the script registry Response code: " .. resp.getResponseCode())
         return
     end
     list = textutils.unserializeJSON(resp.readAll())
     resp.close()
     if not list then
-        error("Failed to parse the Aibo's APT.")
+        error("Failed to parse the Aibo's APT")
     else
-        print("Fetched the Aibo's APT.")
+        print("Fetched the Aibo's APT")
     end
 end
-function tabulateRegistry()
-    fetchRegistry()
+function tabulateAibosAPT()
+    fetchAibosAPT()
     local displayStr = ""
     for scriptName, scriptData in pairs(list["progs"]) do
         displayStr = (displayStr .. "\n[" .. scriptName .. "]\n" .. scriptData["desc"] .. "\n")
@@ -36,8 +36,8 @@ function tabulateRegistry()
     print("\nAvailable scripts:")
     textutils.pagedPrint(displayStr, 5)
 end
-function isScriptInRegistry(scriptName)
-    fetchRegistry()
+function isScriptInAibosAPT(scriptName)
+    fetchAibosAPT()
     if not list["progs"][scriptName] then
         return false
     end
@@ -45,15 +45,15 @@ function isScriptInRegistry(scriptName)
     return true
 end
 function installScript(scriptName)
-    if not isScriptInRegistry(scriptName) then
+    if not isScriptInAibosAPT(scriptName) then
         print("Script not found in the Aibo's APT: " .. scriptName)
-        print("Try running '" .. appname .. " " .. ACTION_LIST .. "' to see all available scripts and their function.")
+        print("Try running '" .. appname .. " " .. ACTION_LIST .. "' to see all available scripts and their function")
         return
     end
     local scriptUrl = list["progs"][scriptName]["url"]
     local resp = http.get(scriptUrl)
     if not resp then
-        print("Failed to fetch " .. scriptName .. ".")
+        print("Failed to fetch " .. scriptName)
         return
     elseif resp.getResponseCode() ~= 200 then
         print("Failed to fetch " .. scriptName .. ". Response code: " .. resp.getResponseCode())
@@ -63,12 +63,12 @@ function installScript(scriptName)
     scriptFile.write(resp.readAll())
     scriptFile.close()
     resp.close()
-    print("Installed " .. scriptName .. ".")
+    print("Installed " .. scriptName)
 end
 function updateScript(scriptName)
-    if not isScriptInRegistry(scriptName) then
+    if not isScriptInAibosAPT(scriptName) then
         print("Script not found in the Aibo's APT: " .. scriptName)
-        print("Try running '" .. appname .. " " .. ACTION_LIST .. "' to see all available scripts and their function.")
+        print("Try running '" .. appname .. " " .. ACTION_LIST .. "' to see all available scripts and their function")
         return
     end
     if not fs.exists(scriptName) then
@@ -107,7 +107,7 @@ function handleCli(action, ...)
             updateScript(scriptName)
         end
     elseif action == ACTION_LIST then
-        tabulateRegistry()
+        tabulateAibosAPT()
     else
         print("Invalid action:", action)
     end
