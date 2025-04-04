@@ -1,7 +1,7 @@
 local detector = peripheral.find("playerDetector")
 local playersOnline = detector.getOnlinePlayers()
 term.clear()
-while true do
+function locate_players_online()
     term.clear()
     local playersOnline = detector.getOnlinePlayers()
     for i=1,#playersOnline do
@@ -23,5 +23,11 @@ while true do
             term.write("X: ".. playerPos.x.." Y: "..playerPos.y.." Z: " .. playerPos.z)
         end
     end
+end
+
+while true do
+    if pcall(locate_players_online) then
+    else
+        print("Unable to locate player")
     sleep(0.5)
 end
