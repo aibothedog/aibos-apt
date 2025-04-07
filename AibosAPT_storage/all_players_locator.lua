@@ -29,5 +29,6 @@ while true do
     if pcall(locate_players_online) then
     else
         print("Unable to locate player")
+    end
     sleep(0.5)
 end
