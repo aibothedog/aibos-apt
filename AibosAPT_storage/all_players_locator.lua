@@ -1,6 +1,7 @@
 local detector = peripheral.find("playerDetector")
 local playersOnline = detector.getOnlinePlayers()
 term.clear()
+--Player locator function
 function locate_players_online()
     term.clear()
     local playersOnline = detector.getOnlinePlayers()
@@ -26,6 +27,7 @@ function locate_players_online()
 end
 
 while true do
+    --Crash handler
     if pcall(locate_players_online) then
     else
         print("Unable to locate player")
