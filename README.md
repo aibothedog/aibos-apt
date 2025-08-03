@@ -1,6 +1,6 @@
 # Aibo's APT
 ### Installation
-```bash
+```shell
 wget https://github.com/aibothedog/aibos-apt/raw/refs/heads/main/aibosapt.lua aibosapt
 ```
 ### Usage

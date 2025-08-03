@@ -16,6 +16,10 @@
         "test_app": {
             "desc": "Test application",
             "url": "https://github.com/aibothedog/aibos-apt/raw/refs/heads/main/AibosAPT_storage/hello_world.lua"
+        },
+        "cftp":{
+            "desc": "CFTP (Computercraft File Transfer Protocol), this app can transfer files over rednet! Requires a modem btw, lol",
+            "url": "https://github.com/aibothedog/aibos-apt/raw/refs/heads/main/AibosAPT_storage/CFTP.lua"
         }
     }
 }
