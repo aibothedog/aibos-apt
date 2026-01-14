@@ -20,6 +20,14 @@
         "cftp":{
             "desc": "CFTP (Computercraft File Transfer Protocol), this app can transfer files over rednet! Requires a modem btw, lol",
             "url": "https://github.com/aibothedog/aibos-apt/raw/refs/heads/main/AibosAPT_storage/CFTP.lua"
+        },
+         "rturtled": {
+            "desc": "RTurtleD (Remote Turtle Daemon) for remote controlling turtle, and doing bunch of stuff with it (requires turtle with modem)",
+            "url": "https://github.com/aibothedog/aibos-apt/raw/refs/heads/main/AibosAPT_storage/rturtled.lua"
+        },
+        "rturtle-client": {
+            "desc": "RTurtle-Client (Remote Turtle client) for remote controlling turtle, and doing bunch of stuff with it (requires anything with modem, recommended using tablet)",
+            "url": "https://github.com/aibothedog/aibos-apt/raw/refs/heads/main/AibosAPT_storage/rturtle-client.lua"
         }
     }
 }
